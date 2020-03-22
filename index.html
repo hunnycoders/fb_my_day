@@ -29,22 +29,16 @@
         let images = ['https://i.picsum.photos/id/17/200/300.jpg', 'https://i.picsum.photos/id/34/200/300.jpg', 'https://i.picsum.photos/id/124/200/300.jpg'];
         let sliderEl = document.querySelector('.slider');
         let imgId = 0;
-        let bar = document.querySelector('.progress-inner');
-        console.log(bar.style.width)
+        let bar = document.querySelectorAll('.progress-inner');
         function setSlideBgImage(id) {
+            bar[id].style.animation = "mymov 5s forwards";
+            bar[id].style.width = '100%';
             sliderEl.style.backgroundImage = `url(${images[id]})`;
         }
         setSlideBgImage(imgId);
-        function resetPb() {
-            console.log(bar.style.width)
-            bar.style.width = '0px';
-            // bar.style.animation = "none";
-            // bar.style.animation = "mymov 5s forwards";
-        }
         setInterval(function () {
             if (imgId >= 2) imgId = -1;
             setSlideBgImage(++imgId);
-            resetPb();
         }, 5000);
     </script>
 </body>

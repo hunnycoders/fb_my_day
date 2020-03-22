@@ -6,7 +6,7 @@
 
 .progress-inner {
     background-color: white;
-    /* width: 5px; */
+    width: 0;
     /* transition: width 5s; */
     /* -webkit-animation: mymov 5s forwards; */
     /* animation: mymov 5s forwards; */
