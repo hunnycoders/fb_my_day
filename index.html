@@ -23,24 +23,28 @@
                 <div class="progress-inner"></div>
             </div>
         </div>
-        <div class="slide-inner">Historical Images Description 1</div>
+        <div class="slide-inner">Historical Images Description</div>
     </div>
     <h4 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Prepared By: Abdur Rahman</h4>
     <script>
-        let images = ['https://i.picsum.photos/id/17/200/300.jpg', 'https://i.picsum.photos/id/34/200/300.jpg', 'https://i.picsum.photos/id/124/200/300.jpg'];
+        let images = [
+            'https://i.picsum.photos/id/190/200/300.jpg',
+            'https://i.picsum.photos/id/230/200/300.jpg',
+            'https://i.picsum.photos/id/231/200/300.jpg'
+        ];
         let sliderEl = document.querySelector('.slider');
         let imgId = 0;
         let bar = document.querySelectorAll('.progress-inner');
         function setSlideBgImage(id) {
-            bar[id].style.animation = "mymov 5s forwards";
+            bar[id].style.animation = "mymov 3s forwards";
             bar[id].style.width = '100%';
             sliderEl.style.backgroundImage = `url(${images[id]})`;
         }
         setSlideBgImage(imgId);
-        setInterval(function () {
-            if (imgId >= 2) imgId = -1;
+        let slideTimer = setInterval(function () {
+            if (imgId >= 2) clearInterval(slideTimer);
             setSlideBgImage(++imgId);
-        }, 5000);
+        }, 3000);
     </script>
 </body>
 
